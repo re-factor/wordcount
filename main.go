@@ -15,8 +15,11 @@ func main() {
 	if err != nil {
 		fail(err)
 	}
-	
-	fmt.Println(len(strings.Split(strings.Trim(src," ")," ")))	
+	if (src == "") {
+		fmt.Println(0)	
+	} else {
+		fmt.Println(len(strings.Split(strings.Trim(src," ")," ")))	
+	}
 }
 
 // readInput reads pattern and source string
@@ -28,7 +31,7 @@ func readInput() (src string, err error) {
 	}
 
 	src = os.Args[1]
-
+	
 	return src, nil
 }
 
